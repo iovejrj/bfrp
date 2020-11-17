@@ -1,0 +1,14 @@
+{
+	"name": "Bfrp",
+	"description": "Deploy Frp on Heroku.",
+	"keywords": ["Frp"],
+	"env": {
+		"UUID": {
+			"description": "Frp UUID",
+			"value": "ad806487-2d26-4636-98b6-ab85cc8521f7"
+		}
+	},
+	"website": "https://frp.dev.boselor.com",
+	"repository": "https://github.com/bclswl0827/v2ray-heroku",
+	"stack": "container"
+}
