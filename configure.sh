@@ -1,8 +1,8 @@
 #!/bin/sh
 # Download and install V2Ray
-curl -L -H "Cache-Control: no-cache" -o frp_0.33.0_linux_amd64.tar.gz http://mirrors.boselor.com/frp/v0.33.0/frp_0.33.0_linux_amd64.tar.gz
-tar -zxvf frp_0.33.0_linux_amd64.tar.gz
-mv frp_0.33.0_linux_amd64 frp
+curl -L -H "Cache-Control: no-cache" -o frp.tar.gz https://github.com/fatedier/frp/releases/download/v0.34.3/frp_0.34.3_linux_amd64.tar.gz
+tar -zxvf frp.tar.gz
+mv frp_0.34.3_linux_arm64 frp
 cd frp
 cat <<-EOF > frp_server.ini
 [common]
@@ -25,7 +25,7 @@ detailed_errors_to_client = true
 authentication_method = token
 authenticate_heartbeats = false
 authenticate_new_work_conns = false
-token = frp.dev.boselor.com
+token = 1234567890
 
 max_pool_count = 5
 max_ports_per_client = 0
@@ -43,4 +43,4 @@ EOF
 
 rm -rf frp_0.33.0_linux_amd64*
 
-/usr/bin/v2ray/v2ray -config=/etc/v2ray/config.json
+#/usr/bin/v2ray/v2ray -config=/etc/v2ray/config.json
