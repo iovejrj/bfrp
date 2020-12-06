@@ -1,5 +1,5 @@
 #!/bin/sh
-# Download and install V2Ray
+# Download and install frps
 curl -L -H "Cache-Control: no-cache" -o frp.tar.gz https://github.com/fatedier/frp/releases/download/v0.34.3/frp_0.34.3_linux_amd64.tar.gz
 tar -zxvf frp.tar.gz
 mv frp_0.34.3_linux_arm64 frp
@@ -40,7 +40,7 @@ tcp_mux = true
 udp_packet_size = 1500
 
 EOF
-
-rm -rf frp_0.33.0_linux_amd64*
-
+cp systemd/frps.service  /usr/lib/systemd/system
+sudo systemctl enable frps
+sudo systemctl start frps
 #/usr/bin/v2ray/v2ray -config=/etc/v2ray/config.json
